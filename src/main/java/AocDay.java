@@ -2,9 +2,9 @@ public abstract class AocDay<INPUT> {
 
     abstract INPUT prepareInput() throws Exception;
 
-    abstract String part1(INPUT input) throws Exception;
+    abstract Object part1(INPUT input) throws Exception;
 
-    abstract String part2(INPUT input) throws Exception;
+    abstract Object part2(INPUT input) throws Exception;
 
     public void solve() {
         solve(false, true);
@@ -25,10 +25,10 @@ public abstract class AocDay<INPUT> {
             INPUT input = prepareInput();
             long afterPrepare = System.nanoTime();
             long beforePart1 = System.nanoTime();
-            String part1Solution = part1(input);
+            Object part1Solution = part1(input);
             long afterPart1 = System.nanoTime();
             long beforePart2 = System.nanoTime();
-            String part2Solution = part2(input);
+            Object part2Solution = part2(input);
             long afterPart2 = System.nanoTime();
 
             if (printSummary) {
